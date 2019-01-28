@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task2</title>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			function getUrl(){
+			var args = {};
+			var allUrl = document.location.search.substring(1);
+			var pairs = allUrl.split("&");
+			document.write(pairs + "<br/>");
+			var sum = 0;
+			for (var i = 0; i < pairs.length; i++){
+				var pos = pairs[i].indexOf("=");
+
+				if (pos == -1){
+					continue;
+				}
+				var argname = pairs[i].substring(0,pos);
+				var value = pairs[i].substring(pos + 1);
+				args[argname] = value;
+				sum += parseInt(value);
+				
+			
+			}
+			document.write("сумма параметров = " + sum);
+			return args;
+			}		
+			getUrl();
+
+		}
+		
+
+
+
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

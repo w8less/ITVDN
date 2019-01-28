@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task4</title>
+
+	<script type="text/javascript">
+		window.onload = function(){
+		var up = document.getElementById("vv");
+		var down = document.getElementById("vn");
+		var left = document.getElementById("left");
+		var right = document.getElementById("right");
+		var div1 = document.getElementById("div");
+		
+		var x = 0;
+		var y = 0;
+		up.onclick = function(){
+			y += 100;
+			div1.style.bottom = y + "px";
+		}
+
+		down.onclick = function(){
+			y -= 100;
+			div1.style.bottom = y + "px";
+		}
+
+		left.onclick = function(){
+			x -= 100;
+			div1.style.left = x + "px";
+		}
+
+		right.onclick = function(){
+			x += 100;
+			div1.style.left = x + "px";
+
+		}
+
+}
+	</script>
+</head>
+<body>
+	<input id="vv" type="submit" value="up">
+	<input id="vn" type="submit" value="down">
+	<input id="right" type="submit" value="right">
+	<input id="left" type="submit" value="left">
+	<div id="div" style="border: 1px solid black; background: green;height: 50px; width: 50px; margin: 50px; position: relative;"></div>
+</body>
+</html>

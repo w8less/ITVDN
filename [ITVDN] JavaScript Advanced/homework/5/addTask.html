@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addTask</title>
+<script type="text/javascript">
+
+	window.onload = function() {
+		var result;
+	var nmb1 ;
+	var nmb2 ;
+	document.getElementById("summ").onclick = function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 + +nmb2;
+	};
+	document.getElementById("vid").onclick = function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 - +nmb2;
+	};
+	document.getElementById("multy").onclick = function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 * +nmb2;
+	};
+	document.getElementById("dil").onclick = function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 / +nmb2;
+	};
+
+
+
+	document.getElementById("result").onclick = function(){
+		alert(result);
+		window.close();
+		window.open("addTask.html");
+	};
+	}
+
+	
+</script>
+</head>
+<body>
+	<div class="guard">
+		<input id="firstNmb" type="text"> <br/>
+		<input id="secondNmb" type="text"><br/>
+	</div>
+	<input id="multy" type="button" value="*">
+	<input id="summ" type="button" value="+">
+	<input id="vid" type="button" value="-">
+	<input id="dil" type="button" value="/">
+	<input id="result" type="button" value="=">
+
+</body>
+</html>

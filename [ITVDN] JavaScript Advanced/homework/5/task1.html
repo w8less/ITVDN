@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task1</title>
+	<style type="text/css">
+
+	</style>
+		 
+<script type="text/javascript">
+	window.addEventListener("load",function(){
+	
+	var result;
+	var nmb1 ;
+	var nmb2 ;
+	var guard = document.getElementById("guard");
+	
+	guard.addEventListener("keypress", function(e) {
+		if (String.fromCharCode(e.charCode) == '.'
+            || String.fromCharCode(e.charCode) == ','
+            || document.getElementById("firstNmb").value.substring(0, 1) == '0' 
+            || document.getElementById("secondNmb").value.substring(0, 1) == '0' ) {
+
+                e.preventDefault();
+            }
+
+        }, true);
+
+	document.getElementById("summ").addEventListener("click",function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 + +nmb2;
+	}, true);
+
+	document.getElementById("vid").addEventListener("click", function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 - +nmb2;
+	}, true);
+
+	document.getElementById("multy").addEventListener("click", function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 * +nmb2;
+	}, true);
+
+	document.getElementById("dil").addEventListener("click", function(){
+		nmb1 = document.getElementById("firstNmb").value;
+		nmb2 = document.getElementById("secondNmb").value;
+		result = +nmb1 / +nmb2;
+	}, true);
+
+	document.getElementById("result").addEventListener("click", function(){
+		alert(result);
+		window.close();
+		window.open("addTask.html");
+	}, true);
+
+}, false);
+	
+</script>
+</head>
+<body>
+	<div id="guard">
+		<input id="firstNmb" type="text" value=""> <br/>
+		<input id="secondNmb" type="text" value=""><br/>
+	</div>
+	<input id="multy" type="button" value="*">
+	<input id="summ" type="button" value="+">
+	<input id="vid" type="button" value="-">
+	<input id="dil" type="button" value="/">
+	<input id="result" type="button" value="=">
+
+</body>
+</html>

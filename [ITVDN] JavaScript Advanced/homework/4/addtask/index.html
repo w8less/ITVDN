@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addTask</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var divs = document.getElementsByTagName("div");
+			var b = document.getElementById("btn");
+			// ivent click
+			var counter = 0;
+			var counter1 = 4;
+			b.onclick = function(){	
+				divs[counter1++ % 5].style.backgroundColor = "green"
+				divs[counter++ % 5].style.backgroundColor = "red";
+		}
+	}
+
+	</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<br/>
+	<input id="btn" type="button" value="БАТОН">
+</body>
+</html>

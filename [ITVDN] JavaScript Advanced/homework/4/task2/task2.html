@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>autorization</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script type="text/javascript">
+window.onload = function(){
+	var args = {};
+	var query = location.search.substring(1);
+	var pairs = query.split("&");
+	// цыкл заполнения args{}
+	for (var i = 0; i < pairs.length; i++){
+		var pos = pairs[i].indexOf("=");
+		/*if (pos == -1){
+			continue;
+		}*/
+	var argname = pairs[i].substring(0,pos);
+	var value = pairs[i].substring(pos + 1);
+	args[argname] = value;
+	}
+
+	// кнопка
+	var button = document.getElementById("btn");
+	var msg = document.getElementById("massage");
+	button.onclick = function(){
+
+		if(args["login"] == "admin" && args["password"] == "12345"){
+			msg.style.color = "green";
+			msg.innerHTML = "вы авторизированы";
+			}
+		else if(args["login"] == "" && args["password"] == ""){
+			var inp1 = document.getElementById("log");
+			var inp2 = document.getElementById("pass");
+			inp1.style.backgroundColor = "red";
+			inp2.style.backgroundColor = "red";
+			msg.innerHTML = "вы не ввели данные";
+		}
+
+		else{
+			msg.innerHTML = "пользователь не сушествует";
+			}
+	}
+}
+</script>
+
+</head>
+<body>
+	<div>
+		<form id="place">
+			<input id="log" type="text" name="login"><br/>
+			<input id="pass" type="password" name="password"><br/>
+			запомнить меня
+			<input id="check" type="checkbox"><br/>
+			<input id="btn" type="submit" value="log in">
+			<p id="massage"></p>
+		</form>
+	</div>
+
+</body>
+</html>

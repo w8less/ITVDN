@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	height: 100px;
+	width: 100px;
+	border: 2px solid black;
+	position: relative;
+}
+
+div:nth-child(1){
+	background: blue;
+}
+
+div:nth-child(2){
+	background: red;
+}
+
+div:nth-child(3){
+	background: green;
+}
+/* 1349*624 */

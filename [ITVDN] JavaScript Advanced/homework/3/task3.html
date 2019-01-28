@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task3</title>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var quest = prompt("vvedit oper + or - nad chislami");
+			document.getElementById("question").innerHTML = quest;
+			var pattern = /\d+/g;
+			var pattern1 = /[+-]/g;
+			var res = quest.match(pattern);
+			var oper = quest.match(pattern1);
+			var suma = 0;
+			function sum (){
+				for(var i = 0; i < res.length; i++){
+					suma += parseInt(res[i]);
+				}
+				document.getElementById("answer").innerHTML = " = " + suma;
+			}
+			var vidn = 2 * parseInt(res[0]);
+			function vid(){
+				for(var i = 0; i < res.length; i++){
+					vidn = vidn - parseInt(res[i]);
+				}
+				document.getElementById("answer").innerHTML = " = " +vidn;
+			}
+
+			if (oper == "+"){
+				sum();
+			}
+			else if(oper == "-"){
+				vid();
+			}
+			else{
+				alert("EROR")
+			}
+
+		}
+
+
+	</script>
+	<style type="text/css">
+		*{
+			font-size: 25px;
+			margin:auto;
+		}
+	</style>
+</head>
+<body>
+	<span id="question">  </span>
+	<span id="answer">  </span>
+</body>
+</html>

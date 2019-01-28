@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task_add</title>
+
+	<script>
+		function selectParagraphs(){
+			var list = document.getElementsByTagName("p");
+			for(var i = 0; i < list.length; i++){
+				list[i].setAttribute("style","border: 1px solid black; border-radius:5px; padding: 5px; width:400px");
+			}
+
+		}
+		function selectLinks(){
+			var list = document.getElementsByTagName("a");
+			for(var i = 0; i < list.length; i++){
+				list[i].setAttribute("style","border: 1px solid black; border-radius:5px; padding: 5px; width:400px");
+			}
+		}	
+		function selectDiv(){
+			var list = document.getElementsByTagName("div");
+			for(var i = 0; i < list.length; i++){
+				list[i].setAttribute("style","border: 1px solid black; border-radius:5px; padding: 5px; width:400px");
+			}
+		}
+	</script>
+</head>
+<body>
+	<a href="#">link1</a>
+	<p>paragraph1</p>
+	<a href="#">link2</a>
+	<p>paragraph2</p>
+	<a href="#">link3</a>
+	<p>paragraph3</p>
+	<a href="#">link4</a>
+	<p>paragraph4</p>
+	<a href="#">link5</a>
+	<p>paragraph5</p>
+	<div id="test_div">It`s div element</div>
+	<br/>
+
+	<input type="button" onclick="selectParagraphs()" style="width: 210px" value="выделить p"><br/>
+	<input type="button" onclick="selectLinks()" style="width: 210px" value="выделить links"><br/>
+	<input type="button" onclick="selectDiv()" style="width: 210px" value="выделить div"><br/>
+	
+</body>
+</html>

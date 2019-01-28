@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task3</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		var div1;
+		var div2;
+		var div3;
+
+		function random(min,max){
+			return Math.floor(Math.random()*(max - min + 1)+ min);
+		}
+		var x1 = random(0,1349);
+		var y1 = random(0,624);
+		var x2 = random(0,1349);
+		var y2 = random(0,624);
+		var x3 = random(0,1349);
+		var y3 = random(0,624);
+
+		function odin(){
+			div1.style.left = x1 + "px";
+			div1.style.top = y1 + "px";
+		 	x1 = random(0,1349);
+			y1 = random(0,624);
+		}
+		function dwa(){
+			div2.style.left = x2 + "px";
+			div2.style.top = y2 + "px";
+		 	x2 = random(0,1349);
+			y2 = random(0,624);
+		}
+		function tri(){
+			div3.style.left = x3 + "px";
+			div3.style.top = y3 + "px";
+		 	x3 = random(0,1349);
+			y3 = random(0,624);
+		}
+		window.onload = function(){
+			div1 = document.getElementById("first");
+			div2 = document.getElementById("second");
+			div3 = document.getElementById("third");
+			setInterval(odin,1000);
+			setInterval(dwa,1000);
+			setInterval(tri,1000);
+		}
+
+	</script>
+</head>
+<body>
+	<div id="first"></div>
+	<div id="second"></div>
+	<div id="third"></div>
+</body>
+</html>

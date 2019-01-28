@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task2</title>
+	<script type="text/javascript">
+		
+//func random INTnumber
+		
+		window.onload = function(){
+		function rand(min,max){
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		var answer = document.getElementById("answ");
+		var numb = rand(1,100);
+		
+		document.getElementById("myNum").onclick = function(){
+			var chislo = prompt("vvedit chislo")
+
+		if (parseInt(chislo) == numb){
+			alert("congratulations");
+			window.close();
+		}
+		else if (parseInt(chislo) < numb){
+			alert("vashe chislo < shukanoho");
+		}
+		else{
+			alert("vashe chislo > shukanoho");	
+		}
+		
+
+		}
+		}
+
+	</script>
+</head>
+<body>
+	<h1 id="quest">Угадай число от 1 до 100</h1>
+	<p id="hint" style="color: blue">пользуйся подсказкой с умом!</p>
+	<p id="answ"></p>	
+	<p id=""></p>
+	<input id = "myNum" type="button" value="send my number">
+
+</body>
+</html>

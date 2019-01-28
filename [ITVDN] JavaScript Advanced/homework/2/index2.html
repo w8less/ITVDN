@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task2</title>
+	<script type="text/javascript">
+/*		function dell(){
+			if (k >= 10){
+				for(var i = 0, i < div.length; i++){
+					p[i]setAttribute("style","color:red")
+				}
+			}			
+		}*/
+
+		function addParagraph(){
+			var div = document.getElementById("div1");
+			var p = document.createElement("p");
+			p.innerHTML = "someText";
+			div.appendChild(p);
+			var k = div.childElementCount;
+			if (k == 10){
+				document.body.removeChild(div);
+			}			
+		}
+
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<input type="button" value="create <p>" onclick = "addParagraph()" >
+
+</body>
+</html>

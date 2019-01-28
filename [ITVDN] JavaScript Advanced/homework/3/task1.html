@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task1</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var sek = 0;
+			var min = 0;
+			var hours = 0;
+			var interval;
+
+			function count(){
+				get("sekund").innerHTML = sek;
+				get("minutes").innerHTML = min;
+				get("hour").innerHTML = hours;
+				sek++;
+	            if(sek === 60){
+	            	min++;
+	            	sek = 0;
+				}
+				
+	            if(min === 60){
+	            	hours++;
+	            	min = 0;
+				}
+			}
+			get("startButton").onclick = function(){
+				interval = setInterval(count, 1000)
+			}
+
+            get("stopButton").onclick = function (){
+                clearInterval(interval);
+            }
+
+            get("clearButton").onclick = function(){
+                clearInterval(interval);
+            	sek = 0;
+            	get("sekund").innerHTML = "00 ";
+        		min = 0;
+            	get("minutes").innerHTML = "00 ";
+            	hours = 0;
+            	get("hour").innerHTML = "00 ";
+            }
+
+		}
+		var get = function (id){
+            return document.getElementById(id);
+        }
+
+	</script>
+	<style type="text/css">
+		*{
+			font-size: 50px;
+		}
+		input{
+			font-size: 25px;
+		}
+		.flex{
+			height: 600px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: auto;
+			flex-flow: column wrap;
+		}
+	</style>
+</head>
+<body>
+	<div class="flex">
+	<h1>timer</h1>
+	<div>
+	<span id="hour"> 00 </span>:
+	<span id="minutes"> 00 </span>:
+	<span id="sekund"> 00 </span>
+	</div>
+	<br/>
+	<input id="startButton" type="button" value="start">
+	<input id="stopButton" type="button" value="stop">
+	<input id="clearButton" type="button" value="clear">
+	</div>
+</body>
+</html>

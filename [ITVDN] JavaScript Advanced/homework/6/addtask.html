@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addtask</title>
+	<style type="text/css">
+		div{
+			background: green;
+			border: 1px solid black; 
+			border-radius: 40px; 
+			width: 75px;
+			height: 75px;
+			position: absolute;
+ 
+				}
+	</style>
+	<script type="text/javascript">
+
+            window.addEventListener("load", init, false);
+var x = 0;
+var y = 0;
+            function init() {
+            	var elem = document.getElementById("place");
+                var main = document.getElementById("main");
+                main.onkeypress = function(e){
+              		var value = e.keyCode;
+              		if (value == 39){
+              			x += 10;
+			    	    elem.style.left = x + "px";  
+			   
+              		}
+              		if (value == 37){
+              			x -= 10;
+			    	    elem.style.left = x + "px";  
+			    
+              		} 
+              		if (value == 38){
+              			y -= 10;
+			    	    elem.style.top = y + "px";  
+			    
+              		}
+              		if (value == 40){
+              			y += 10;
+			    	    elem.style.top = y + "px";  
+			        
+              		}
+              	}
+              }
+
+
+	</script>
+</head>
+<body id="main">
+	<div id="place"></div>
+</body>
+</html>

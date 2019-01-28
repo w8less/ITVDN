@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task2</title>
+	<script>
+	window.addEventListener("load", init, false);
+			
+		function init() {
+			var paragraphs = document.getElementsByTagName("p");
+			function choise(b){
+				for (var i = 0; i < paragraphs.length; i++) {
+	                    paragraphs[i].style.color = b;
+    			}
+			}
+            var main = document.getElementById("main");
+            main.onkeydown = function(e){
+          		var value = e.keyCode;
+          		if (value == 82){
+          			choise('red');
+		   		}
+		   		if (value == 71){
+          			choise('green');
+		   		}
+		   		if (value == 66){
+		   			choise('blue');	
+		   		}
+     	    }
+        }
+
+	</script>
+</head>
+<body id="main">
+	<div>
+		<p id="par">some text</p>
+	</div>
+	<div>
+		<p id="par">some text</p>
+	</div>
+	<div>
+		<p id="par">some text</p>
+	</div>
+</body>
+</html>

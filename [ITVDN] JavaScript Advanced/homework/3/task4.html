@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task4</title>
+	<script type="text/javascript">
+		function get(id){
+			return document.getElementById(id);
+		}
+// w - windows
+		var w1;
+		var w2;
+		var w3;
+		
+// func -- onclick 2n+1
+		function less1() {
+			w1 = window.open("index1.html", "Lesson 1", "width=400px, height=400px");
+			get("a1").setAttribute("href","javascript:close1()");
+			get("a1").innerHTML = "Js lesson 1 (open)";
+		};
+
+		function less2() {
+			w2 = window.open("index2.html", "Lesson 2", "width=400px, height=400px");
+			get("a2").setAttribute("href","javascript:close2()");
+			get("a2").innerHTML = "Js lesson 2 (open)";
+		};
+
+		function less3() {
+			w3 = window.open("index3.html", "Lesson 3", "width=400px, height=400px");
+			get("a3").setAttribute("href","javascript:close3()");
+			get("a3").innerHTML = "Js lesson 3 (open)";
+		};
+
+
+// 2n
+		function close1(){
+			w1.close();
+			get("a1").innerHTML = "Js lesson 1";
+			get("a1").setAttribute("href", "javascript:less1()");
+
+		};
+		function close2(){
+			w2.close();
+			get("a2").innerHTML = "Js lesson 2";
+			get("a2").setAttribute("href", "javascript:less2()");
+
+		};
+		function close3(){
+			w3.close();
+			get("a3").innerHTML = "Js lesson 3";
+			get("a3").setAttribute("href", "javascript:less3()");
+
+		};
+
+	</script>
+	<style type="text/css">
+			a{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<a id="a1" href="javascript:less1()">Js lesson 1</a><br/>
+	<a id="a2" href="javascript:less2()">Js lesson 2</a><br/>
+	<a id="a3" href="javascript:less3()">Js lesson 3</a>
+</body>
+</html>
